@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order List</title>
+    <link rel="stylesheet" href="{% static 'cafe/cafe.css' %}">
+</head>
+<body>
+    <section class="order-list">
+        <h1>Order List</h1>
+        <ul>
+            {% for order in orders %}
+                <li>
+                    <strong>Drink:</strong> {{ order.name }}<br>
+                    <strong>Cost:</strong> {{ order.price }}<br>
+                    <img src="{% static 'cafe/icons/coffee_cup.png' %}" alt="Coffee Cup">
+                </li>
+            {% empty %}
+                <li>No orders found.</li>
+            {% endfor %}
+        </ul>
+    </section>
+</body>
+</html>
+
