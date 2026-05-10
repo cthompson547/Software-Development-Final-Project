@@ -1,53 +1,14 @@
-/* Default CSS settings for Cafe */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+h1 a, h2 a {
+    color: #C25100;
+    font-family: 'Arial', sans-serif;
+    padding-left: 300px;
+    padding-top: 300px;
+    
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #ad6f6f;
-    background-color: #f4f4f4;
-}
-
-header {
-    background-color: #8B4513;
-    color: #ffffff;
-    padding: 1rem;
-    text-align: center;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    padding: 1rem;
-}
-
-nav ul li {
-    margin: 0 1rem;
-}
-
-nav ul li a {
-    color: #8B4513;
-    text-decoration: none;
-}
-
-main {
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-footer {
-    background-color: #8B4513;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+    padding-left: 300px;
+    padding-top: 300px;
+    color: #C25100;
 }

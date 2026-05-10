@@ -7,5 +7,9 @@ def order_list(request):
     orders = CreateOrder.objects.all()
     return render(request, 'cafe/order_list.html', {'orders': orders})
 
+def base(request):
+    orders = CreateOrder.objects.all()
+    return render(request, 'cafe/base.html', {'orders': orders})
+
 
 

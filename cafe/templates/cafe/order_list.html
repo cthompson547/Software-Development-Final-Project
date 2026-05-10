@@ -1,28 +1,19 @@
+{% extends 'cafe/base.html' %}
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order List</title>
-    <link rel="stylesheet" href="{% static 'cafe/cafe.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cafe.css' %}">
 </head>
 <body>
-    <section class="order-list">
-        <h1>Order List</h1>
-        <ul>
-            {% for order in orders %}
-                <li>
-                    <strong>Drink:</strong> {{ order.name }}<br>
-                    <strong>Cost:</strong> {{ order.price }}<br>
-                    <img src="{% static 'cafe/icons/coffee_cup.png' %}" alt="Coffee Cup">
-                </li>
-            {% empty %}
-                <li>No orders found.</li>
-            {% endfor %}
-        </ul>
-    </section>
+    <h1>Order List</h1>
+    {% for order in orders %}
+        <div class="order">
+            <p>Drink: {{ order.name }}</p>
+            <p>Price: {{ order.price }}</p>
+            <img src="{% static 'icons/coffee_cup.png' %}" alt="Coffee Cup" width="100">
+        </div>
+    {% endfor %}
 </body>
 </html>
-
