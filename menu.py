@@ -33,8 +33,8 @@ menu = [
     Product("Pink Rose cupcake", 2.00),
     Product("Matcha Latte", 3.00),
     Product("Blueberry Muffin", 1.50),
-    Product("Crissant", 1.50),
+    Product("Croissant", 1.50),
     Product("Water", 2.00),
-    Product("Panckaes", 4.00),
+    Product("Pancakes", 4.00),
     Product("Breakfast sandwich", 2.50)
 ]
