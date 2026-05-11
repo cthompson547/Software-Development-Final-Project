@@ -18,14 +18,13 @@
         text-align: center;
         font-family: 'Arial', sans-serif;
         margin-bottom: 20px;
-    ">Order List</h2>
+    ">Upcoming Events</h2>
     
-    {% if orders %}
         <ul style="
             list-style: none;
             padding: 0;
         ">
-            {% for order in orders %}
+            {% for event in events %}
                 <li style="
                     background-color: #F5EDE4;
                     border-left: 4px solid #C9A66B;
@@ -37,40 +36,19 @@
                         color: #8B4513;
                         margin: 0 0 10px 0;
                         font-family: 'Arial', sans-serif;
-                    ">Customer: {{ order.customer }}</h3>
+                    ">{{ event.name }}</h3>
                     <p style="
                         color: #5A5A5A;
                         margin: 5px 0;
                         font-family: 'Arial', sans-serif;
-                    "><strong>Date:</strong> {{ order.order_date }}</p>
-                    {% if order.items.all %}
-                        <p style="
-                            color: #8B4513;
-                            margin: 10px 0 5px 0;
-                            font-family: 'Arial', sans-serif;
-                        "><strong>Items:</strong></p>
-                        <ul style="
-                            margin: 5px 0;
-                            padding-left: 20px;
-                        ">
-                            {% for item in order.items.all %}
-                                <li style="
-                                    color: #5A5A5A;
-                                    font-family: 'Arial', sans-serif;
-                                ">{{ item.name }}</li>
-                            {% endfor %}
-                        </ul>
-                    {% endif %}
+                    "><strong>Date:</strong> {{ event.date }}</p>
+                    <p style="
+                        color: #5A5A5A;
+                        margin: 5px 0;
+                        font-family: 'Arial', sans-serif;
+                    "><strong>Description:</strong> {{ event.description }}</p>
                 </li>
             {% endfor %}
         </ul>
-    {% else %}
-        <p style="
-            text-align: center;
-            color: #8B4513;
-            font-family: 'Arial', sans-serif;
-        ">No orders at this time.</p>
-    {% endif %}
 </div>
 {% endblock %}
-

@@ -31,6 +31,15 @@ class Order(models.Model):
 
     def __str__(self):
         return f"Order {self.id} for {self.customer.name}"
+    
+# Class 4: Schedules for events
+class Event(models.Model):
+    name = models.CharField(max_length=100)
+    date = models.DateField()
+    description = models.TextField()
+
+    def __str__(self):
+        return self.name
 
 
 from django.contrib import admin
