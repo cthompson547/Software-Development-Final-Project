@@ -70,7 +70,7 @@ def register_view(request):
             return render(request, 'cafe/login.html', {'register_error': 'Passwords do not match'})
     return render(request, 'cafe/login.html')
 
-def login(request):
+def login(request, user=None):
     from django.contrib.auth.forms import AuthenticationForm
     from django.contrib.auth import login as auth_login
 
@@ -83,4 +83,9 @@ def login(request):
     else:
         form = AuthenticationForm()
     return render(request, 'cafe/login.html', {'form': form})
+
+def logout(request):
+    from django.contrib.auth import logout as auth_logout
+    auth_logout(request)
+    return redirect('home')
 
