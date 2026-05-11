@@ -1,7 +1,6 @@
 from django.contrib import admin
+from .models import CoffeeItem, Customer, Order
 
-from .models import CreateOrder
-
-# Register your models here.
-
-admin.site.register(CreateOrder)
+admin.site.register(CoffeeItem)
+admin.site.register(Customer)
+admin.site.register(Order)

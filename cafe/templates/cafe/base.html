@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head></head>
 <title>Circle</title>
 </head>
+{% block content %}
+{% endblock %}
 <body>
-
     # Edit the topbar here
 <div style="
 
@@ -18,7 +19,6 @@
     border: 20px solid #8B4513;
 
 "></div>
-
     # Edit the sidebar here
 <div style="
 
@@ -57,13 +57,14 @@
     font-family: 'Arial', sans-serif;
     ">
         <head>
+        <a href="{% url 'home' %}" class="button" style="color: #E8A38F; text-decoration: none;">
         Pink rose cafe
+        </a>
         </head>
     </h1>
     # edit the home button here
 
-    <div href="{% url 'order_list' %}" style="
-
+<div style="
     position: fixed;
     bottom: 430px;
     left: 20px;
@@ -72,24 +73,21 @@
     background-color: 	#C9A66B;
     border-radius: 10px;
     border: 5px solid #8B4513;
-
-
 ">
 
-<h1 style="
+    <h1 style="
 
-    color: #FAF6F0;
-    text-align: center; 
-    line-height: 10px; 
-    font-family: 'Arial', sans-serif;
-    ">
-        <a href="{% url 'order_list' %}" class="button" style="color: #FAF6F0; text-decoration: none;">Home</a>
+        color: #FAF6F0;
+        text-align: center; 
+        line-height: 10px; 
+        font-family: 'Arial', sans-serif;
+        ">
+            <a href="{% url 'home' %}" class="button" style="color: #FAF6F0; text-decoration: none;">Home</a>
     </h1>
+</div>
 
 
-
-    <div href="{% url 'order_list' %}" style="
-
+<div href="{% url 'order_list' %}" style="
     position: fixed;
     bottom: 350px;
     left: 20px;
@@ -98,19 +96,109 @@
     background-color: 	#C9A66B;
     border-radius: 10px;
     border: 5px solid #8B4513;
-
-
 ">
 
-<h1 style="
-
-    color: #FAF6F0;
-    text-align: center; 
-    line-height: 10px; 
-    font-family: 'Arial', sans-serif;
-    ">
-        <a href="{% url 'base' %}" class="button" style="color: #FAF6F0; text-decoration: none;">Base</a>
+    <h1 style="
+        color: #FAF6F0;
+        text-align: center; 
+        line-height: 10px; 
+        font-family: 'Arial', sans-serif;
+        ">
+            <a href="{% url 'base' %}" class="button" style="color: #FAF6F0; text-decoration: none;">Base</a>
     </h1>
+</div>
+
+    <div href="{% url 'order_list' %}" style="
+    position: fixed;
+    bottom: 270px;
+    left: 20px;
+    width: 200px;
+    height: 50px;
+    background-color: 	#C9A66B;
+    border-radius: 10px;
+    border: 5px solid #8B4513;
+">
+
+    <h1 style="
+        color: #FAF6F0;
+        text-align: center; 
+        line-height: 10px; 
+        font-family: 'Arial', sans-serif;
+        ">
+            <a href="{% url 'order_list' %}" class="button" style="color: #FAF6F0; text-decoration: none;">Order</a>
+    </h1>
+</div>
+
+</div>
+
+    <div href="{% url 'order_list' %}" style="
+    position: fixed;
+    bottom: 190px;
+    left: 20px;
+    width: 200px;
+    height: 50px;
+    background-color: 	#C9A66B;
+    border-radius: 10px;
+    border: 5px solid #8B4513;
+">
+
+    <h1 style="
+        color: #FAF6F0;
+        text-align: center; 
+        line-height: 10px; 
+        font-family: 'Arial', sans-serif;
+        ">
+            <a href="{% url 'base' %}" class="button" style="color: #FAF6F0; text-decoration: none;">Events</a>
+    </h1>
+</div>
+
+</div>
+
+    <div href="{% url 'order_list' %}" style="
+    position: fixed;
+    bottom: 110px;
+    left: 20px;
+    width: 200px;
+    height: 50px;
+    background-color: 	#C9A66B;
+    border-radius: 10px;
+    border: 5px solid #8B4513;
+">
+
+    <h1 style="
+        color: #FAF6F0;
+        text-align: center; 
+        line-height: 10px; 
+        font-family: 'Arial', sans-serif;
+        ">
+            <a href="{% url 'base' %}" class="button" style="color: #FAF6F0; text-decoration: none;">Contact</a>
+    </h1>
+</div>
+
+</div>
+
+    <div href="{% url 'order_list' %}" style="
+    position: fixed;
+    bottom: 30px;
+    left: 20px;
+    width: 200px;
+    height: 50px;
+    background-color: 	#C9A66B;
+    border-radius: 10px;
+    border: 5px solid #8B4513;
+">
+
+    <h1 style="
+        color: #FAF6F0;
+        text-align: center; 
+        line-height: 10px; 
+        font-family: 'Arial', sans-serif;
+        ">
+            <a href="{% url 'base' %}" class="button" style="color: #FAF6F0; text-decoration: none;">About</a>
+    </h1>
+</div>
+
+
 
 
 </body>

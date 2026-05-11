@@ -2,12 +2,10 @@
 
 {% block content %}
 <div style="position: absolute; top: 300px; left: 300px;">
-    <h1>Order List</h1>
+    <h1>Welcome to Cafe</h1>
     <ul>
-        {% for order in orders %}
-            <li>{{ order }} {{ customer }} {{ product }}</li>
-        {% endfor %}
+        <li><a href="{% url 'order_list' %}">View Orders</a></li>
+        <!-- Add more links as needed -->
     </ul>
 </div>
 {% endblock %}
-
