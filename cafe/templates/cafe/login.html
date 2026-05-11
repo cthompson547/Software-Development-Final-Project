@@ -1,0 +1,169 @@
+{% extends 'cafe/base.html' %}
+
+{% block content %}
+<div style="
+    position: absolute;
+    top: 300px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    background-color: #FAF6F0;
+    border: 5px solid #8B4513;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+">
+    <h2 style="
+        color: #E8A38F;
+        text-align: center;
+        font-family: 'Arial', sans-serif;
+        margin-bottom: 20px;
+    ">Login or Register</h2>
+    
+    <!-- Login Form -->
+    <div style="margin-bottom: 30px;">
+        <h3 style="
+            color: #8B4513;
+            font-family: 'Arial', sans-serif;
+            margin-bottom: 15px;
+        ">Login</h3>
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <div style="margin-bottom: 15px;">
+                <label for="login_username" style="
+                    color: #5A5A5A;
+                    font-family: 'Arial', sans-serif;
+                    display: block;
+                    margin-bottom: 5px;
+                ">Username:</label>
+                <input type="text" id="login_username" name="username" required style="
+                    width: 100%;
+                    padding: 10px;
+                    border: 2px solid #C9A66B;
+                    border-radius: 5px;
+                    font-family: 'Arial', sans-serif;
+                    box-sizing: border-box;
+                ">
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label for="login_password" style="
+                    color: #5A5A5A;
+                    font-family: 'Arial', sans-serif;
+                    display: block;
+                    margin-bottom: 5px;
+                ">Password:</label>
+                <input type="password" id="login_password" name="password" required style="
+                    width: 100%;
+                    padding: 10px;
+                    border: 2px solid #C9A66B;
+                    border-radius: 5px;
+                    font-family: 'Arial', sans-serif;
+                    box-sizing: border-box;
+                ">
+            </div>
+            {% if login_error %}
+                <p style="color: #FF0000; font-family: 'Arial', sans-serif;">{{ login_error }}</p>
+            {% endif %}
+            <button type="submit" style="
+                background-color: #C9A66B;
+                color: #FAF6F0;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                font-family: 'Arial', sans-serif;
+                cursor: pointer;
+                width: 100%;
+            ">Login</button>
+        </form>
+    </div>
+    
+    <!-- Register Form -->
+    <div>
+        <h3 style="
+            color: #8B4513;
+            font-family: 'Arial', sans-serif;
+            margin-bottom: 15px;
+        ">Register</h3>
+        <form method="post" action="{% url 'register' %}">
+            {% csrf_token %}
+            <div style="margin-bottom: 15px;">
+                <label for="register_username" style="
+                    color: #5A5A5A;
+                    font-family: 'Arial', sans-serif;
+                    display: block;
+                    margin-bottom: 5px;
+                ">Username:</label>
+                <input type="text" id="register_username" name="username" required style="
+                    width: 100%;
+                    padding: 10px;
+                    border: 2px solid #C9A66B;
+                    border-radius: 5px;
+                    font-family: 'Arial', sans-serif;
+                    box-sizing: border-box;
+                ">
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label for="register_email" style="
+                    color: #5A5A5A;
+                    font-family: 'Arial', sans-serif;
+                    display: block;
+                    margin-bottom: 5px;
+                ">Email:</label>
+                <input type="email" id="register_email" name="email" required style="
+                    width: 100%;
+                    padding: 10px;
+                    border: 2px solid #C9A66B;
+                    border-radius: 5px;
+                    font-family: 'Arial', sans-serif;
+                    box-sizing: border-box;
+                ">
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label for="register_password" style="
+                    color: #5A5A5A;
+                    font-family: 'Arial', sans-serif;
+                    display: block;
+                    margin-bottom: 5px;
+                ">Password:</label>
+                <input type="password" id="register_password" name="password" required style="
+                    width: 100%;
+                    padding: 10px;
+                    border: 2px solid #C9A66B;
+                    border-radius: 5px;
+                    font-family: 'Arial', sans-serif;
+                    box-sizing: border-box;
+                ">
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label for="register_password2" style="
+                    color: #5A5A5A;
+                    font-family: 'Arial', sans-serif;
+                    display: block;
+                    margin-bottom: 5px;
+                ">Confirm Password:</label>
+                <input type="password" id="register_password2" name="password2" required style="
+                    width: 100%;
+                    padding: 10px;
+                    border: 2px solid #C9A66B;
+                    border-radius: 5px;
+                    font-family: 'Arial', sans-serif;
+                    box-sizing: border-box;
+                ">
+            </div>
+            {% if register_error %}
+                <p style="color: #FF0000; font-family: 'Arial', sans-serif;">{{ register_error }}</p>
+            {% endif %}
+            <button type="submit" style="
+                background-color: #C9A66B;
+                color: #FAF6F0;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                font-family: 'Arial', sans-serif;
+                cursor: pointer;
+                width: 100%;
+            ">Register</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

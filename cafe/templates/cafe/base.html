@@ -40,9 +40,9 @@
     height: 750px;
     border-radius: 50%;
     background-color: #F5EDE4;
-    position: relative; 
-        left: -375px; 
-        top: -375px; 
+    position: fixed; 
+        left: -410px; 
+        top: -410px; 
     border: 20px solid   #8B4513;">
 
     # Edit the circle text here
@@ -50,10 +50,10 @@
 
     color: #E8A38F;
     text-align: center; 
-    line-height: 1000px; 
+    line-height: 750px; 
     position: relative; 
-        left: 100px; 
-        top: 90px;
+        left: 145px; 
+        top: 200px;
     font-family: 'Arial', sans-serif;
     ">
         <head>
@@ -198,7 +198,49 @@
     </h1>
 </div>
 
+<div href="{% url 'order_list' %}" style="
+    position: fixed;
+    top: 30px;
+    right: 20px;
+    width: 200px;
+    height: 50px;
+    background-color: 	#C9A66B;
+    border-radius: 10px;
+    border: 5px solid #8B4513;
+    
+">
 
+    <h1 style="
+        color: #FAF6F0;
+        text-align: center; 
+        line-height: 10px; 
+        font-family: 'Arial', sans-serif;
+        ">
+            <a href="{% url 'login' %}" class="button" style="color: #FAF6F0; text-decoration: none;">Sign in/up</a>
+    </h1>
+</div>
+
+<div href="{% url 'order_list' %}" style="
+    position: fixed;
+    top: 110px;
+    right: 20px;
+    width: 200px;
+    height: 50px;
+    background-color: 	#C9A66B;
+    border-radius: 10px;
+    border: 5px solid #8B4513;
+    
+">
+
+    <h1 style="
+        color: #FAF6F0;
+        text-align: center; 
+        line-height: 10px; 
+        font-family: 'Arial', sans-serif;
+        ">
+            <a href="{% url 'new_order' %}" class="button" style="color: #FAF6F0; text-decoration: none;">Add order</a>
+    </h1>
+</div>
 
 
 </body>

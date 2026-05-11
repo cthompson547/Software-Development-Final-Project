@@ -1,0 +1,72 @@
+{% extends 'cafe/base.html' %}
+
+{% block content %}
+<div style="
+    position: absolute;
+    top: 300px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    background-color: #FAF6F0;
+    border: 5px solid #8B4513;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+">
+    <h2 style="
+        color: #E8A38F;
+        text-align: center;
+        font-family: 'Arial', sans-serif;
+        margin-bottom: 20px;
+    ">Create New Order</h2>
+    
+    {% if error %}
+        <p style="color: #FF0000; text-align: center; font-family: 'Arial', sans-serif;">{{ error }}</p>
+    {% endif %}
+    
+    <form method="post">
+        {% csrf_token %}
+        
+        <div style="margin-bottom: 20px;">
+            <p style="
+                color: #8B4513;
+                font-family: 'Arial', sans-serif;
+                margin-bottom: 10px;
+            ">Select Products:</p>
+            {% for coffee in coffees %}
+                <div style="
+                    background-color: #F5EDE4;
+                    border-left: 4px solid #C9A66B;
+                    padding: 10px;
+                    margin-bottom: 10px;
+                    border-radius: 5px;
+                ">
+                    <label style="
+                        color: #5A5A5A;
+                        font-family: 'Arial', sans-serif;
+                        display: flex;
+                        align-items: center;
+                    ">
+                        <input type="checkbox" name="coffees" value="{{ coffee.id }}" style="margin-right: 10px;">
+                        <span><strong>{{ coffee.name }}</strong> - ${{ coffee.price }} ({{ coffee.description }})</span>
+                    </label>
+                </div>
+            {% endfor %}
+        </div>
+        
+        <button type="submit" style="
+            background-color: #C9A66B;
+            color: #FAF6F0;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-family: 'Arial', sans-serif;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        ">Submit Order</button>
+    </form>
+</div>
+{% endblock %}
+
