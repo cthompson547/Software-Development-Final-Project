@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
 <head></head>
 <title>Circle</title>
@@ -50,17 +51,16 @@
 
     color: #E8A38F;
     text-align: center; 
-    line-height: 750px; 
+    line-height: 1.2; 
     position: relative; 
-        left: 145px; 
-        top: 200px;
+        left: 140px; 
+        top: 280px;
     font-family: 'Arial', sans-serif;
     ">
-        <head>
-        <a href="{% url 'home' %}" class="button" style="color: #E8A38F; text-decoration: none;">
+        <img src="{% static 'icons/logo.png' %}" alt="Pink Rose Cafe Logo" style="display: block; margin: 0 auto -120px; max-width: 400px; height: 400px">
+        <a href="{% url 'home' %}" class="button" style="color: #E8A38F; text-decoration: none; display: block; margin-top: 15px;">
         Pink rose cafe
         </a>
-        </head>
     </h1>
     # edit the home button here
 
@@ -70,7 +70,7 @@
     left: 20px;
     width: 200px;
     height: 50px;
-    background-color: 	#C9A66B;
+    background-color: 	#ffeac9;
     border-radius: 10px;
     border: 5px solid #8B4513;
 ">
@@ -81,8 +81,14 @@
         text-align: center; 
         line-height: 10px; 
         font-family: 'Arial', sans-serif;
+        position: relative;
+        left: -10px;
+        top: -25px;
         ">
-            <a href="{% url 'home' %}" class="button" style="color: #FAF6F0; text-decoration: none;">Home</a>
+            <a href="{% url 'home' %}" class="button" style="color: #8B4513; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px;">
+                <img src="{% static 'icons/home.png' %}" alt="Home" style="width: 60px; height: 60px;">
+                Home
+            </a>
     </h1>
 </div>
 
@@ -93,7 +99,7 @@
     left: 20px;
     width: 200px;
     height: 50px;
-    background-color: 	#C9A66B;
+    background-color: 	#ffeac9;
     border-radius: 10px;
     border: 5px solid #8B4513;
 ">
@@ -103,8 +109,14 @@
         text-align: center; 
         line-height: 10px; 
         font-family: 'Arial', sans-serif;
+        position: relative;
+        left: -10px;
+        top: -25px;
         ">
-            <a href="{% url 'base' %}" class="button" style="color: #FAF6F0; text-decoration: none;">Base</a>
+            <a href="{% url 'base' %}" class="button" style="color: #8B4513; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px;">
+                <img src="{% static 'icons/coffee_cup.png' %}" alt="Base" style="width: 60px; height: 60px;">
+                Base
+            </a>
     </h1>
 </div>
 
@@ -114,7 +126,7 @@
     left: 20px;
     width: 200px;
     height: 50px;
-    background-color: 	#C9A66B;
+    background-color: 	#ffeac9;
     border-radius: 10px;
     border: 5px solid #8B4513;
 ">
@@ -124,8 +136,14 @@
         text-align: center; 
         line-height: 10px; 
         font-family: 'Arial', sans-serif;
+        position: relative;
+        left: -10px;
+        top: -25px;
         ">
-            <a href="{% url 'order_list' %}" class="button" style="color: #FAF6F0; text-decoration: none;">Order</a>
+            <a href="{% url 'order_list' %}" class="button" style="color: #8B4513; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px;">
+                <img src="{% static 'icons/bag.png' %}" alt="Order" style="width: 60px; height: 60px;">
+                Order
+            </a>
     </h1>
 </div>
 
@@ -137,7 +155,7 @@
     left: 20px;
     width: 200px;
     height: 50px;
-    background-color: 	#C9A66B;
+    background-color: 	#ffeac9;
     border-radius: 10px;
     border: 5px solid #8B4513;
 ">
@@ -147,8 +165,14 @@
         text-align: center; 
         line-height: 10px; 
         font-family: 'Arial', sans-serif;
+        position: relative;
+        left: -10px;
+        top: -25px;
         ">
-            <a href="{% url 'event' %}" class="button" style="color: #FAF6F0; text-decoration: none;">Events</a>
+            <a href="{% url 'event' %}" class="button" style="color: #8B4513; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px;">
+                <img src="{% static 'icons/location.png' %}" alt="Events" style="width: 60px; height: 60px;">
+                Events
+            </a>
     </h1>
 </div>
 
@@ -160,7 +184,7 @@
     left: 20px;
     width: 200px;
     height: 50px;
-    background-color: 	#C9A66B;
+    background-color: 	#ffeac9;
     border-radius: 10px;
     border: 5px solid #8B4513;
 ">
@@ -170,8 +194,14 @@
         text-align: center; 
         line-height: 10px; 
         font-family: 'Arial', sans-serif;
+        position: relative;
+        left: -8px;
+        top: -25px;
         ">
-            <a href="{% url 'base' %}" class="button" style="color: #FAF6F0; text-decoration: none;">Contact</a>
+            <a href="{% url 'base' %}" class="button" style="color: #8B4513; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 0px;">
+                <img src="{% static 'icons/envelope.png' %}" alt="Contact" style="width: 60px; height: 60px;">
+                Contact
+            </a>
     </h1>
 </div>
 
@@ -183,7 +213,7 @@
     left: 20px;
     width: 200px;
     height: 50px;
-    background-color: 	#C9A66B;
+    background-color: 	#ffeac9;
     border-radius: 10px;
     border: 5px solid #8B4513;
 ">
@@ -193,8 +223,14 @@
         text-align: center; 
         line-height: 10px; 
         font-family: 'Arial', sans-serif;
+        position: relative;
+        left: -10px;
+        top: -25px;
         ">
-            <a href="{% url 'about' %}" class="button" style="color: #FAF6F0; text-decoration: none;">About</a>
+            <a href="{% url 'about' %}" class="button" style="color: #8B4513; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px;">
+                <img src="{% static 'icons/menu.png' %}" alt="About" style="width: 60px; height: 60px;">
+                About
+            </a>
     </h1>
 </div>
 
@@ -238,7 +274,9 @@
         line-height: 10px; 
         font-family: 'Arial', sans-serif;
         ">
+        {% if user.is_authenticated %}
             <a href="{% url 'new_order' %}" class="button" style="color: #FAF6F0; text-decoration: none;">Add order</a>
+        {% endif %}
     </h1>
 </div>
 
@@ -260,7 +298,9 @@
         line-height: 10px; 
         font-family: 'Arial', sans-serif;
         ">
-            <a href="{% url 'logout' %}" class="button" style="color: #FAF6F0; text-decoration: none;">Logout</a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}" class="button" style="color: #FAF6F0; text-decoration: none;">Logout</a>
+            {% endif %}
     </h1>
 </div>
 
