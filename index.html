@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pink Rose Cafe | Mental Health</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="glass-container">
+        <h1>🌹 Pink Rose Cafe</h1>
+        <p><i>Mindful brewing for your mental health.</i></p>
+        <hr>
+
+
+        <div id="step1">
+            <h3>Step 1: Gratitude Journal</h3>
+            <form action="/save_note" method="POST">
+                <textarea name="note" placeholder="What are you grateful for today?" required></textarea>
+                <br>
+                <button type="submit" class="btn">Save Note</button>
+            </form>
+            <br>
+            <button type="button" class="btn" onclick="showStep2()" style="background:#ffb6c1;">Next: Order & Meditate</button>
+        </div>
+
+
+<div id="step2" style="display:none; margin-top:20px;">
+    <h3>Step 2: Mindful Ordering</h3>
+
+    <p>How are you feeling today?</p>
+    <select id="moodSelect" onchange="recommendDrink()" style="padding:8px; border-radius:10px; border:1px solid #ffb6c1;">
+        <option value="">-- Select Mood --</option>
+        <option value="Anxious">Anxious</option>
+        <option value="Tired">Tired</option>
+        <option value="Stressed">Stressed</option>
+        <option value="Sad">Sad</option>
+        <option value="Hungry">Hungry</option>
+    </select>
+    <p id="recommendation" style="color: #db7093; font-weight: bold; margin-top: 10px;"></p>
+
+    <hr>
+    <div id="menu-list" style="text-align: left; max-width: 300px; margin: auto;">
+        {% for item in menu %}
+        <div style="display:flex; justify-content:space-between; margin: 10px 0;">
+            <label>
+                <input type="checkbox" class="drink-item" data-price="{{item.price}}" onchange="calcTotal()">
+                {{item.icon}} {{item.name}}
+            </label>
+            <span>${{item.price}}</span>
+        </div>
+        {% endfor %}
+    </div>
+
+    <h4>Total Order Cost: $<span id="totalPrice">0.00</span></h4>
+
+
+    <div id="payment-section" style="margin-top: 20px;">
+        <p>How would you like to pay?</p>
+        <select id="paymentMethod" style="padding:5px; border-radius:10px;">
+            <option value="Card">Credit/Debit Card</option>
+            <option value="ApplePay">Apple Pay</option>
+            <option value="Cash">Cash at Counter</option>
+        </select>
+        <br><br>
+        <button type="button" class="btn" onclick="finishOrder()">Complete Order</button>
+    </div>
+
+
+    <div id="finalMessage" style="display:none; margin-top: 20px; border: 2px solid #ffb6c1; padding: 15px; border-radius: 15px; background: rgba(255,182,193,0.1);">
+        <h3 style="color: #db7093;">Thank you for your order! 🌹</h3>
+        <p>Your drink is being prepared with care. Remember: <i>One deep breath at a time.</i></p>
+        <p>Stay mindful, stay grounded.</p>
+    </div>
+</div>
+
+ <script>
+
+    function showStep2() {
+        document.getElementById('step1').style.display = 'none';
+        document.getElementById('step2').style.display = 'block';
+    }
+
+
+    function recommendDrink() {
+        const mood = document.getElementById('moodSelect').value;
+        const recs = {
+            "Anxious": "We suggest a Rose Latte to calm your nerves. ☕",
+            "Tired": "A Matcha Latte will give you steady energy. 🍵",
+            "Stressed": "Hibiscus Tea is perfect for relaxing. 🌺",
+            "Sad": "A Pink Rose Cupcake always helps a little bit. 🧁",
+            "Hungry": "The Breakfast Sandwich is hearty and filling! 🥪"
+        };
+        document.getElementById('recommendation').innerText = recs[mood] || "";
+    }
+
+
+    function calcTotal() {
+        let total = 0;
+        document.querySelectorAll('.drink-item:checked').forEach(item => {
+            total += parseFloat(item.getAttribute('data-price'));
+        });
+        document.getElementById('totalPrice').innerText = total.toFixed(2);
+    }
+
+
+    function finishOrder() {
+        document.getElementById('payment-section').style.display = 'none';
+        document.getElementById('finalMessage').style.display = 'block';
+    }
+    </script>
+
+
